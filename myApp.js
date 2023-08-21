@@ -12,8 +12,8 @@ app.get("/public", (req, res) => {
 
 app.get("/json", (req, res) => {
     let response;
-    
-    if (process.env.VAR_NAME === "allCaps") {
+
+    if (process.env.MESSAGE_STYLE === "allCaps") {
         response = "Hello World".toUpperCase();
       } else {
         response = "Hello World";
