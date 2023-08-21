@@ -39,6 +39,8 @@ app.get("/now", (req, res, next)=>{
     })
 });
 
+
+//route parameter
 app.get("/:word/echo", (req, res) => {
     const {word} = req.params;
     res.json({
@@ -47,8 +49,14 @@ app.get("/:word/echo", (req, res) => {
 });
 
 
+//query parameter
+app.get("/name", (req, res) => {
+    let {first:firstName, last:lastName} = req.query;
 
-
+    res.json({
+        "name" : `${firstName} ${lastName}`
+    })
+})
 
 
 
