@@ -41,10 +41,9 @@ app.get("/now", (req, res, next)=>{
 
 app.get("/:word/echo", (req, res) => {
     const word = req.params;
-    let temp = true;
-    while (temp) {
-        console.log(word)
-    }
+    res.json({
+        "echo":word
+    })
 });
 
 
