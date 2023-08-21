@@ -40,7 +40,7 @@ app.get("/now", (req, res, next)=>{
 });
 
 app.get("/:word/echo", (req, res) => {
-    const word = req.params;
+    const {word} = req.params;
     res.json({
         "echo":word
     })
