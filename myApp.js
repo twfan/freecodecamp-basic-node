@@ -3,6 +3,8 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
+const mySecret = process.env['MESSAGE_STYLE']
+
 
 app.use("/public",express.static(__dirname + "/public"));
 
@@ -11,7 +13,7 @@ app.get("/public", (req, res) => {
 });
 
 app.get("/json", (req, res) => {
-    let response = (process.env.MESSAGE_STYLE === "uppercase") ?  'hello json'.toUpperCase() :  'hello json';
+    let response = (mySecret === "uppercase") ?  'hello json'.toUpperCase() :  'hello json';
 
     res.json({
         'message': response
