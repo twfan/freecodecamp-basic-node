@@ -13,10 +13,14 @@ app.get("/public", (req, res) => {
 });
 
 app.get("/json", (req, res) => {
-    let response = (mySecret === "uppercase") ?  'hello json'.toUpperCase() :  'hello json';
+    let response = 'hello json';
+
+    if (mySecret === 'uppercase') {
+        response = response.toUpperCase();
+    }
 
     res.json({
-        'message': response
+        message: response
     });
 });
 
