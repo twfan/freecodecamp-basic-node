@@ -11,7 +11,7 @@ app.get("/public", (req, res) => {
 });
 
 app.get("/json", (req, res) => {
-    let response = (process.env.MESSAGE_STYLE === 'uppercase') ?  'hello json'.toUpperCase() :  'hello json';
+    let response = (process.env.MESSAGE_STYLE === 'allCaps') ?  'hello json'.toUpperCase() :  'hello json';
 
     res.json({
         message: response
